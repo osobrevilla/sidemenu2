@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+  <div class="sidemenu-main sidemenu-right" id="sidemenu"></div>
+  <button type="button" onclick="sideMenu.toggle()" name="button">Toggle</button>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    
+    window.sideMenu = new SMSideMenu([
+      new SMLabelItem('Teresa'),
+      new SMLabelItem('Miguel'),
+      new SMSeparator(),
+      new SMSubMenuItem('Hijos',
+          new SMSubMenu([
+            new SMLabelItem('Andre'),
+            new SMLabelItem('Toño'),
+            new SMLabelItem('Oscar'),
+          ], {
+            title: 'Hijos'
+          })
+      )
+    ], { overlay: true })
+    sideMenu.appendTo(document.getElementById('sidemenu'))
+   })
+</script>
+</body>
+</html>
