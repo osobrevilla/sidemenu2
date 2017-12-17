@@ -33,7 +33,11 @@ const config = {
   },
   devtool: 'source-map',
   plugins: [
-    new CleanWebpackPlugin(['dist'])
+    new CleanWebpackPlugin(['dist']),
+    new HTMLWebpackPlugin({
+      inject: 'head',
+      template: './index.html'
+    })
   ],
   devServer: {
     hot: true,
@@ -46,10 +50,6 @@ switch (process.env.NODE_ENV) {
   case 'development':
     config.devtool = 'inline-source-map'
     config.plugins = config.plugins.concat([
-      new HTMLWebpackPlugin({
-        inject: 'head',
-        template: './index.html'
-      }),
       new webpack.NamedModulesPlugin(),
       new webpack.HotModuleReplacementPlugin()
     ])
