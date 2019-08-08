@@ -11,17 +11,17 @@ import { pressEvent } from "./contants";
  */
 
 export default class SMButtonItem extends SMLabelItem {
-  constructor(title = '', onPress, className = '', id = '') {
+  constructor(title = "", onPress, className = "", id = "") {
     super(title, className);
-    if (id) this.id
-    this.el.classList.add('sidemenu-item-button')
-    this._perform = (e) => {
-      if (typeof onPress === 'function') onPress.call(this)
-    }
-    this.el.addEventListener(pressEvent, this._perform)
+    if (id) this.id;
+    this.el.classList.add("sidemenu-item-button");
+    this._perform = e => {
+      if (typeof onPress === "function") onPress.call(this);
+    };
+    this.el.addEventListener(pressEvent, this._perform);
   }
   remove() {
-    super.remove()
-    this.el.removeEventListener(pressEvent, this._perform)
+    super.remove();
+    this.el.removeEventListener(pressEvent, this._perform);
   }
 }
