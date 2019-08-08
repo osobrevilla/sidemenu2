@@ -39,6 +39,7 @@ const config = {
   plugins: [
     new CleanWebpackPlugin(),
     new HTMLWebpackPlugin({
+      filename: "index.html",
       inject: "head",
       template: "./src/index.html"
     })
