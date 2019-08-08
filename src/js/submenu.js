@@ -2,7 +2,7 @@ import Menu from "./menu";
 import { pressEvent } from "./contants";
 
 export default class SMSubMenu extends Menu {
-  constructor(options, items = []) {
+  constructor(items = [], options) {
     super(items, Object.assign({}, SMSubMenu.options, options));
     if (this.options.back) {
       this._back = document.createElement("li");

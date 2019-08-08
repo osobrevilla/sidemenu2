@@ -11,6 +11,8 @@ import SMMenuOverlay from "./sidemenu-overlay";
 import SMSubMenu from "./submenu";
 import SMSubMenuItem from "./submenuitem";
 
+if (module.hot) module.hot.accept();
+
 export default class SMSideMenu extends Menu {
   constructor(items = [], options) {
     super(items, options);

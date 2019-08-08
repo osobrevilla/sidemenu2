@@ -40,7 +40,7 @@ const config = {
     new CleanWebpackPlugin(),
     new HTMLWebpackPlugin({
       inject: "head",
-      template: "./index.html"
+      template: "./src/index.html"
     })
   ],
   devServer: {
