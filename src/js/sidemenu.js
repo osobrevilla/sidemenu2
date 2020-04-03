@@ -36,7 +36,7 @@ export default class SMSideMenu extends Menu {
       },
       isEmpty() {
         return this.stacks.length === 0;
-      }
+      },
     };
 
     if (this.options.overlay) {
@@ -70,7 +70,7 @@ export default class SMSideMenu extends Menu {
       let addeds = [].slice.call(
         this._target.querySelectorAll(".sidemenu-added")
       );
-      addeds.forEach(element => {
+      addeds.forEach((element) => {
         element.classList.remove("sidemenu-added");
         this._target.appendChild(element);
       });

@@ -15,7 +15,7 @@ export default class SMButtonItem extends SMLabelItem {
     super(title, className);
     if (id) this.id;
     this.el.classList.add("sidemenu-item-button");
-    this._perform = e => {
+    this._perform = (e) => {
       if (typeof onPress === "function") onPress.call(this);
     };
     this.el.addEventListener(pressEvent, this._perform);

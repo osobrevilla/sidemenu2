@@ -1,5 +1,5 @@
 const dummyStyle = document.createElement("div").style;
-const vendor = (function() {
+const vendor = (function () {
   var vendors = "t,webkitT,MozT,msT,OT".split(","),
     t,
     i = 0,
@@ -15,14 +15,14 @@ const vendor = (function() {
 })();
 
 export const isTouch = !!("ontouchstart" in window || navigator.maxTouchPoints);
-export const TRNEND_EV = (function() {
+export const TRNEND_EV = (function () {
   if (vendor === false) return false;
   var transitionEnd = {
     "": "transitionend",
     webkit: "webkitTransitionEnd",
     Moz: "transitionend",
     O: "otransitionend",
-    ms: "MSTransitionEnd"
+    ms: "MSTransitionEnd",
   };
   return transitionEnd[vendor];
 })();

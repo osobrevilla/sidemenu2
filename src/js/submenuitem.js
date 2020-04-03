@@ -7,7 +7,7 @@ export default class SMSubMenuItem extends SMLabelItem {
     this.el.classList.add("sidemenu-item-more");
     this._label.addEventListener(
       pressEvent,
-      e => {
+      (e) => {
         e.stopPropagation();
         this.subMenu.open();
       },

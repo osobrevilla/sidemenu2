@@ -7,7 +7,7 @@ export default class SMSubMenu extends Menu {
     if (this.options.back) {
       this._back = document.createElement("li");
       this._back.classList.add("sidemenu-back");
-      this._back.addEventListener(pressEvent, e => {
+      this._back.addEventListener(pressEvent, (e) => {
         e.preventDefault();
         this.sideMenu.goBack();
       });
@@ -19,6 +19,6 @@ export default class SMSubMenu extends Menu {
     this.sideMenu = null;
   }
   static options = {
-    back: "back"
+    back: "back",
   };
 }
