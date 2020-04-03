@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development  webpack-dev-server --progress --mode=development --hotOnly --colors",
     "build": "cross-env NODE_ENV=production  webpack -p --progress --mode=production --colors",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prettier": "prettier --write ."
   },
   "author": "",
   "license": "ISC",
@@ -20,13 +21,11 @@
     "css-loader": "^3.2.0",
     "html-webpack-plugin": "^3.2.0",
     "node-sass": "^4.12.0",
+    "prettier": "2.0.2",
     "sass-loader": "^7.1.0",
     "style-loader": "^1.0.0",
     "webpack": "^4.39.1",
     "webpack-cli": "^3.3.6",
     "webpack-dev-server": "^3.7.2"
-  },
-  "dependencies": {
-    "core-js": "3"
   }
 }
