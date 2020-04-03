@@ -91,7 +91,7 @@ export default class Menu {
     return this;
   }
   _onTransitionEnd(callback) {
-    this.__transitionEnd = e => {
+    this.__transitionEnd = (e) => {
       this.el.removeEventListener(TRNEND_EV, this.__transitionEnd, false);
       if (typeof callback === "function") callback.call(this, this, e);
     };

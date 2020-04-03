@@ -11,29 +11,29 @@ const config = {
     path: path.resolve(__dirname, "dist"),
     library: "SMSideMenu",
     libraryTarget: "umd",
-    libraryExport: "default"
+    libraryExport: "default",
   },
   module: {
     rules: [
       {
         test: /\.jsx?$/,
-        loader: "babel-loader"
+        loader: "babel-loader",
       },
       {
         test: /\.sass$/,
         use: [
           {
-            loader: "style-loader" // creates style nodes from JS strings
+            loader: "style-loader", // creates style nodes from JS strings
           },
           {
-            loader: "css-loader" // translates CSS into CommonJS
+            loader: "css-loader", // translates CSS into CommonJS
           },
           {
-            loader: "sass-loader" // compiles Sass to CSS
-          }
-        ]
-      }
-    ]
+            loader: "sass-loader", // compiles Sass to CSS
+          },
+        ],
+      },
+    ],
   },
   devtool: "source-map",
   plugins: [
@@ -41,14 +41,14 @@ const config = {
     new HTMLWebpackPlugin({
       filename: "index.html",
       inject: "head",
-      template: "./src/index.html"
-    })
+      template: "./src/index.html",
+    }),
   ],
   devServer: {
     hot: true,
     open: true,
-    contentBase: path.join(__dirname, "dist")
-  }
+    contentBase: path.join(__dirname, "dist"),
+  },
 };
 
 switch (process.env.NODE_ENV) {
@@ -56,7 +56,7 @@ switch (process.env.NODE_ENV) {
     config.devtool = "inline-source-map";
     config.plugins = config.plugins.concat([
       new webpack.NamedModulesPlugin(),
-      new webpack.HotModuleReplacementPlugin()
+      new webpack.HotModuleReplacementPlugin(),
     ]);
     break;
   default:
