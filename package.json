@@ -8,7 +8,8 @@
     "build": "cross-env NODE_ENV=production  webpack -p --progress --mode=production --colors",
     "test": "echo \"Error: no test specified\" && exit 1",
     "prettier-write": "prettier --write ./src",
-    "prettier-check": "prettier --list-different ./src"
+    "prettier-check": "prettier --list-different ./src",
+    "deploy-github": "git subtree push --prefix dist origin gh-pages"
   },
   "author": "",
   "license": "ISC",
