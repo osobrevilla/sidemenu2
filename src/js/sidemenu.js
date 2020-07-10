@@ -17,6 +17,8 @@ export default class SMSideMenu extends Menu {
   constructor(items = [], options) {
     super(items, options);
 
+    this._pressEvents = [pressEvent].concat(isTouch ? ["touchstart"] : []);
+
     this.options.back = "";
 
     /** @expose*/
@@ -42,10 +44,9 @@ export default class SMSideMenu extends Menu {
     if (this.options.overlay) {
       this._onCloseProxy = this.close.bind(this);
       this.overlay = new SMMenuOverlay();
-      this.overlay.el.addEventListener(
-        isTouch ? "touchstart" : pressEvent,
-        this._onCloseProxy
-      );
+      this._pressEvents.forEach((eventName) => {
+        this.overlay.el.addEventListener(eventName, this._onCloseProxy);
+      });
     }
 
     this._target = null;
@@ -103,6 +104,13 @@ export default class SMSideMenu extends Menu {
     this._target.appendChild(this.el);
     this._refresh();
     return this;
+  }
+
+  destroy() {
+    this.close();
+    this._pressEvents.forEach((eventName) => {
+      this.overlay.el.removeEventListener(eventName, this._onCloseProxy);
+    });
   }
 }
 
